@@ -1,8 +1,10 @@
 const express=require('express');
 
 const app=express();
+const bodyParser=require('body-parser') // user for parsing req
 
 
+app.use(bodyParser.urlencoded()); // this middleware allows us to parse data from request now we can do req.body and get data passed in request body
 
 // add middleware
 app.use((req,res,next)=>{ // this function will be called for every request 
