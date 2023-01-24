@@ -2,11 +2,11 @@ const express=require('express');
 
 const app=express();
 const bodyParser=require('body-parser') // user for parsing req
-const homeRoutes=require('./routes/home'); //importing home routes
+const homeRoutes=require('./routes/user'); //importing home routes
 
 app.use(bodyParser.urlencoded({extended:false})); // this middleware allows us to parse data from request now we can do req.body and get data passed in request body
  
-app.use('/',homeRoutes)
+app.use('/user',homeRoutes)
 
 
 
