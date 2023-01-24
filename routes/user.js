@@ -14,5 +14,7 @@ router.delete('/delUser/:id',userController.delUserById)
 router.get('/getUser/:id',userController.getUserById);
 
 router.post('/updateUser/:id',userController.updateUser)
+
+router.get('/getAll',userController.getAll)
  
 module.exports=router
