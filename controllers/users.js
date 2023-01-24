@@ -1,14 +1,18 @@
 const db=require('../config/sql');
 const User = require('../models/users');
-const user=require('../models/users');
 
 
 module.exports.addUser=function(req,res){
-    console.log(req.body)
-    db.execute('Insert into users (id,name) values (?,?)',[req.body.id,req.body.name]).then(result=>{
-        return res.status(200).send(result)
-    }).catch(err=>{
-       return res.send(err)
+    const id=req.body.id;
+    const name=req.body.name
+    User.create({
+        id:id,
+        name:name
+    }).then(result=>{
+        return res.send(result);
+    })
+    .catch(err=>{
+        return res.send(err); 
     })
 }  
 
