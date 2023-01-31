@@ -23,7 +23,7 @@ User.hasOne(Cart)
 Cart.belongsTo(User);
 Cart.belongsToMany(product,{through:cartitem})
 product.belongsToMany(Cart,{through:cartitem})
-sequelize.sync({force:true}).then(res=>{}).catch(err=>{}) // it creates tables for models we created using sequelize
+sequelize.sync().then(res=>{}).catch(err=>{}) // it creates tables for models we created using sequelize
 
 app.listen(3000,(err)=>{ 
     if(err){
